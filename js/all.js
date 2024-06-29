@@ -189,11 +189,6 @@ if (JSON.parse(localStorage.getItem("selenite.passwordAtt"))) {
 				});
 		});
 })();
-// webp loader for older browsers
-var polyfillScript = document.createElement("script");
-polyfillScript.src = "https://polyfill.io/v3/polyfill.js";
-document.head.appendChild(polyfillScript);
-// polyfill.io
 $(document).ready(function(){
     $.getScript('https://cdnjs.cloudflare.com/ajax/libs/core-js/3.37.0/minified.js');
   });

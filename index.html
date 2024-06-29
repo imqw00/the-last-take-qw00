@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html class="sl-theme-dark" lang="en">
   <head>
     <!-- initialize theme vars
@@ -18,7 +18,7 @@
 <script src="/js/themes.js"></script>
     <script src="/js/randomquote.js"></script>
     
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
 
 
@@ -63,20 +63,6 @@
       </div>
       <BR>
     </main>
-    
-    <script>
-			document.addEventListener("DOMContentLoaded", function () {
-				const adContainers = document.querySelectorAll("[id=adcontainer]");
-				if (adContainers.length > 0) {
-					for (let i = 0; i < adContainers.length; i++) {
-						if (Math.random() < 0.75 || localStorage.getItem("selenite.adblock") === "true") {
-							adContainers[i].innerHTML = "";
-						}
-					}
-				}
-			});
-		</script>
-    
     <footer class="noscroll">
       <a href="https://codeberg.org/skysthelimitt/selenite">Source</a>
       <a href="https://discord.gg/7jyufnwJNf">Discord</a>
