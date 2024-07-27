@@ -1,5 +1,44 @@
 let backup_icon;
 let backup_name;
+let socket;
+if (location.origin.includes("https")) {
+	socket = new WebSocket(`wss://${location.host}/socket`);
+} else {
+	socket = new WebSocket(`ws://${location.host}/socket`);
+}
+socket.addEventListener("open", (event) => {
+	let cookies = document.cookie.split("; ");
+	for (let i = 0; i < cookies.length; i++) {
+		if (cookies[i].trim().startsWith("token=")) {
+			socket.send(cookies[i].trim());
+		}
+	}
+});
+socket.addEventListener("message", (event) => {
+	if (event.data == "ping") {
+		socket.send(`pong${location.pathname.includes("/semag/") ? location.pathname.split("/")[2] : ""}`);
+		return;
+	}
+	if (event.data.startsWith("announce.")) {
+		let styles = document.createElement("style");
+		styles.innerHTML = `@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");.announce {font-family: "Prompt", sans-serif;position: absolute;margin-left: auto;margin-right: auto;top: 10px;z-index: 10000000;background-color: #a53026;padding: 10px;width: max-content;border-radius: 10px;left:0;right:0;border-color: #f74f40;border-width: 5px;border-radius: 10px;border-style: solid;max-width: 60%;font-size: 16px;color: white;}@keyframes FadeIn {0% {opacity: 0;}100% {opacity: 1;}}@keyframes FadeOut {0% {opacity: 1;}100% {opacity: 0;}}`;
+		let announcement = document.createElement("div");
+		announcement.innerText = event.data.substring(9);
+		announcement.setAttribute("class", "announce");
+		announcement.style.opacity = "0";
+		announcement.style.animation = "FadeIn 1s ease-in-out forwards";
+		document.head.appendChild(styles);
+		document.body.appendChild(announcement);
+		setTimeout(() => {
+			announcement.style.animation = "FadeOut 1s ease-in-out forwards";
+			setTimeout(() => {
+				announcement.remove();
+				styles.remove();
+			}, 1000);
+		}, 14000);
+	}
+});
+
 function setCloak(name, icon) {
 	var tabicon = getCookie("tabicon");
 	if (tabicon || icon) {
@@ -82,20 +121,15 @@ function panicMode() {
 		panicurl = "https://google.com";
 	}
 }
-const head = document.getElementsByTagName("head")[0];
-document.addEventListener(
-	"DOMContentLoaded",
-	function () {
+document.addEventListener("DOMContentLoaded", () => {
 		setCloak();
-		const gscript = document.createElement("script");
-		gscript.setAttribute("async", "");
-		gscript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-XVTVBR1D5V");
-		const ingscript = document.createElement("script");
-		ingscript.innerHTML = `window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-98DP5VKS42');`;
-		document.head.append(gscript, ingscript);
+		let plausible = document.createElement("script");
+		plausible.setAttribute("defer", "");
+		plausible.setAttribute("src", "/js/analytics.js");
+		plausible.setAttribute("data-domain", "selenite.cc");
+		let plausible_more = document.createElement("script");
+		plausible_more.innerHTML = "window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }";
+		document.head.appendChild(plausible);
 	},
 	false
 );
@@ -136,73 +170,18 @@ addEventListener("visibilitychange", (e) => {
 		}
 	}
 });
-// modified from ultraviolet to make it different
-let enc = {
-	encode(str) {
-		if (!str) return str;
-		return btoa(
-			encodeURIComponent(
-				str
-					.toString()
-					.split("")
-					.map((char, ind) => (ind % 3 ? String.fromCharCode(char.charCodeAt() + ind) : char))
-					.join("")
-			)
-		);
-	},
-	decode(str) {
-		if (!str) return str;
-		let [input, ...search] = str.split("?");
-		input = decodeURIComponent(atob(input));
-		return (
-			input
-				.split("")
-				.map((char, ind) => (ind % 3 ? String.fromCharCode(char.charCodeAt(0) - ind) : char))
-				.join("") + (search.length ? "?" + search.join("?") : "")
-		);
-	},
-};
-// if (localStorage.getItem("selenite.password")) {
-// 	if (!location.hash) {
-// 		location.hash = localStorage.getItem("selenite.password");
-// 	}
-// }
-if (JSON.parse(localStorage.getItem("selenite.passwordAtt"))) {
-	if (JSON.parse(localStorage.getItem("selenite.passwordAtt"))[0] == false && Math.floor(Date.now() / 1000) - JSON.parse(localStorage.getItem("selenite.passwordAtt"))[1] < 600) {
-		location.href = "https://google.com";
-	}
-}
-!(function () {
-	var e = document.createElement("script");
-	(e.src = "https://code.jquery.com/jquery-3.7.1.min.js"),
-		document.head.appendChild(e),
-		(e.onload = function () {
-			var t = $("<script>").attr("src", "https://unpkg.com/webp-hero@0.0.2/dist-cjs/polyfills.js");
-			$("head").append(t);
-			var n = $("<script>").attr("src", "https://unpkg.com/webp-hero@0.0.2/dist-cjs/webp-hero.bundle.js");
-			$("head").append(n),
-				t.on("load", function () {
-					n.on("load", function () {
-						var t = new webpHero.WebpMachine();
-						t.polyfillDocument();
-					});
-				});
-		});
-})();
-$(document).ready(function(){
-    $.getScript('https://cdnjs.cloudflare.com/ajax/libs/core-js/3.37.0/minified.js');
-  });
-  // core js
-
-  (async () => {
+$(document).ready(function () {
+	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/core-js/3.37.0/minified.js");
+});
+(async () => {
 	let watermarkName = "Selenite";
 	let watermarkLink = "https://selenite.cc/";
 	document.addEventListener("DOMContentLoaded", async () => {
-		if(window.self.location.origin != window.top.location.origin) {
+		if (window.self.location.origin != window.top.location.origin) {
 			let watermark = document.createElement("watermark");
 			watermark.innerHTML = `Powered by<br>${watermarkName}`;
 			let watermarkStyle = document.createElement("style");
-			const myFont = new FontFace('Pacifico', 'url(https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JHgFVrJJfecg.woff2)');
+			const myFont = new FontFace("Pacifico", "url(https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JHgFVrJJfecg.woff2)");
 			await myFont.load();
 			document.fonts.add(myFont);
 			watermarkStyle.innerHTML = `watermark {
@@ -217,12 +196,12 @@ $(document).ready(function(){
 				text-size: 24px;
 				cursor: pointer;
 				user-select: none;
-			}`
+			}`;
 			document.body.appendChild(watermark);
 			document.body.appendChild(watermarkStyle);
 			watermark.addEventListener("click", () => {
 				location.href = watermarkLink;
-			})
+			});
 		}
-	})
+	});
 })();

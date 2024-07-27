@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			$(".caraxle").prop({ href: `javascript:${encodeURI(data)}` });
 		});
 	}
-	initTime();
 });
 function setPanicMode() {
 	if (!$("#panic").val().startsWith("https")) {
@@ -112,37 +111,6 @@ function delPassword() {
 	localStorage.removeItem("selenite.password");
 }
 
-function getCurrentTime() {
-	const n = document.getElementById("time");
-
-	fetch("https://worldtimeapi.org/api/ip")
-		.then((response) => response.json())
-		.then((data) => {
-			const t = new Date(data.utc_datetime);
-			const formattedTime = t.toLocaleTimeString(undefined, {
-				hour: "numeric",
-				minute: "numeric",
-				second: "numeric",
-				hour12: true,
-			});
-			n.textContent = formattedTime;
-		})
-		.catch(() => {
-			const currentTime = new Date();
-			const formattedTime = currentTime.toLocaleTimeString(undefined, {
-				hour: "numeric",
-				minute: "numeric",
-				second: "numeric",
-				hour12: true,
-			});
-			n.textContent = formattedTime;
-		});
-}
-
-getCurrentTime();
-setInterval(getCurrentTime, 900);
-
-
 $(document).ready(function () {
 	if (!window.location.href.startsWith("about:")) {
 		$("#webicon").attr("placeholder", window.location.href.replace(/\/[^\/]*$/, "/"));
@@ -159,9 +127,9 @@ function toast(message, onclick) {
 	toast.innerHTML = `<div class=samerow><h1>${message.title}${message.time ? ` - ${timeAgo(new Date(message.time * 1000))}` : ""}</h1></div><p>${message.message}</p>`;
 	toast.style.animation = "toastFade 6s";
 	document.body.appendChild(toast);
-	if(onclick){
+	if (onclick) {
 		toast.addEventListener("click", onclick);
-		toast.style.cursor = 'pointer';
+		toast.style.cursor = "pointer";
 	}
 	setTimeout(() => {
 		toast.remove();
@@ -194,4 +162,3 @@ let cookieConsentStyle = document.createElement("link");
 cookieConsentStyle.href = "/js/cookieConsent.css";
 cookieConsentStyle.rel = "stylesheet";
 document.head.appendChild(cookieConsentStyle);
-

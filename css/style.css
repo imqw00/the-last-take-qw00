@@ -81,8 +81,8 @@ footer a,
 footer a:visited,
 header a,
 header a:visited {
-    margin-right: 2rem;
-    margin-left: 1rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
 	text-decoration: none;
 }
 
@@ -142,6 +142,8 @@ label {
 	justify-content: center;
 	gap: 0;
 	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center
 }
 h1 {
 	font-size: 60px;
@@ -257,7 +259,8 @@ img.star {
 	justify-content: center;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
 	width: 50%;
 	background-color: var(--inputbg);
 	box-sizing: border-box;
@@ -272,7 +275,8 @@ input[type="text"] {
 	transition: opacity 0.25s ease-in-out;
 	opacity: 100%;
 }
-input[type="text"]:hover {
+input[type="text"]:hover,
+input[type="password"]:hover {
 	opacity: 80%;
 }
 ::placeholder {
@@ -351,9 +355,11 @@ label {
 	width: 30vw;
 	font-size: 16px;
 }
-#status {
-	position: absolute;
-	right: 2%;
+.usericon {
+	width: 24px;
+	height: 24px;
+	align-self: right;
+	/* display: none; */
 }
 #toast {
 	position: fixed;
@@ -403,6 +409,7 @@ div.profile.top {
 	display: flex;
 	justify-content: left;
 	align-items: center;
+	box-shadow: 0px 0px 5px 5px var(--uibg);
 }
 div.profile.top.text {
 	position: relative;
@@ -411,41 +418,157 @@ div.profile.top.text {
 	width: auto;
 	justify-self: center;
 	height: auto;
-	margin-left: 30px;
+	margin: 30px;
+	max-width: 40%;
+}
+
+div.profile.top.text.right {
+	margin-left: auto;
+	margin-right: 80px;
 }
 
 div.profile.top.text h1 {
-	font-size: 40px;
+	font-size: 2vw;
 }
 div.profile.top.text h2 {
-	font-size: 20px;
+	font-size: 1.25vw;
+}
+div.profile.top.text a {
+	font-size: 1.25vw;
 }
 
-div.profile.top img {
+img.pfp {
     height: 80%;
 	object-fit: contain;
 	width: auto;
 	margin: 30px;
 	border-radius: 20px;
-}
-
-.vertical-divider {
-	width: 3px;
-	height: 90%;
-	background-color: var(--inputborder);
-	border-radius: 1px;
-	margin-left: auto;
-    margin-right: auto;
+	aspect-ratio: 1 / 1;
 }
 div.profile.top.text .about {
-	font-size: 20px;
+	height: auto;
+	max-width: 100%;
 }
 
-/* div.profile.top.text .righttext {
-	justify-self: right;
-} */
+#edit {
+	cursor: pointer;
+	position: relative;
+	height: 2vw;
+	margin-left: 5px;
+	width: auto;
+}
+#counter {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+#popup {
+	width: 50%;
+	height: 40%;
+	z-index: 99999999;
+	position: absolute;
+	position: absolute;
+	top: 50%;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	background-color: var(--inputbg);
+	border-color: var(--inputborder);
+	border-width: 5px;
+	border-radius: 10px;
+	border-style: solid;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 0px 5px 5px var(--uibg);
+}
+#popup input {
+	width: 90%;
+	height: 30%;
+}
+#popup h1 {
+	font-size: 32px;
+}
+
+#popup #close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	
+}
+img.badges {
+	position: relative;
+	height: 2vw;
+	margin-left: 5px;
+	width: auto;
+}
+
+p#counter {
+	bottom: 38%;
+	right: 7%;
+}
 
 
+.users {
+	text-decoration: none;
+	width: 30%;
+	height: 10vh;
+	background-color: var(--uibg);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 0px 5px 5px var(--uibg);
+	margin: 1.5%;
+}
+.users h1, .users p {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-self: center;
+	height: auto;
+	max-width: 100%;
+	margin: auto;
+}
+.user_info {
+	width: 100%;
+}
+
+.users h1 {
+	font-size: 1vw;
+}
+.users p {
+	font-size: 0.75vw;
+}
+.users a {
+	font-size: 0.75vw;
+	text-decoration: underline;
+}
+
+.users p {
+	height: auto;
+	max-width: 100%;
+}
+#users {
+	width: 95%;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pages-btn {
+	margin: 10px;
+}
+#ai {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
 @keyframes toastFade {
 	0% {
 		opacity: 0;

@@ -13,7 +13,7 @@
 
 
     <!-- initialize my stuff -->
-    <script src="/js/all.js"></script>
+    <script src="/js/all.min.js"></script>
     <script src="/js/main.js"></script>
 		<script src="/js/widget.js"></script>
 <script src="/js/themes.js"></script>
@@ -32,6 +32,9 @@
 
     <!-- toastify -->
     <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        
+      })
       $.getJSON("/data/games.json", (data) => {
         for(let i = 0;i < data.length;i++) {
           if(location.pathname.includes(data[i]["directory"])) {
@@ -52,13 +55,14 @@
 			<a href="/apps.html">Apps</a>
 			<a href="/settings.html">Settings</a>
 			<a id="blank" href="#">Open Blank</a>
-			<div id="status">
-				<p id="time">00:00 AM</p>
-			</div>
+      <a href="/u/" class="usericon"><img src="/img/user.svg"></a>
+
 		</header>
     <main id="main" class="noscroll">
       <h1>Page not found!</h1>
       <p>We could not find this page.</p>
+      <p>Trying to access a page such as login, register, or a user page? Those are only available on official links.</p>
+      <p><a href="https://discord.gg/7jyufnwJNf">Join the Discord to find official links.</a></p>
       <a href="/index.html"><button>Go home</button></a>
       <button onclick="statsForNerds()">Stats for nerds</button>
           <div id="sfn" style="display: none;" class="message">
