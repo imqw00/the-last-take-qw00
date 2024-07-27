@@ -394,7 +394,7 @@ label {
 	height: 56px;
 	z-index: 199975;
 	border-radius: 100%;
-	background-image: url("/img/discord-mark-white.png");
+	background-image: url("/img/discord.svg");
 	background-size: 60%;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -485,6 +485,12 @@ div.profile.top.text .about {
 #popup input {
 	width: 90%;
 	height: 30%;
+}
+#popup input[type=file] {
+	height: auto;
+	text-align-last: center;
+	display: block;
+	margin: 30px;
 }
 #popup h1 {
 	font-size: 32px;
