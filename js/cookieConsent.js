@@ -1,7 +1,7 @@
 // --- Config --- //
 var purecookieTitle = "Cookies."; // Title
 var purecookieDesc = "By using this website, you automatically accept that we use cookies."; // Description
-var purecookieLink = 'Selenite uses cookies to store settings and game progress. Selenite is also powered by Adsterra and Google Analytics.'; // Cookiepolicy link
+var purecookieLink = 'Selenite uses cookies to store settings and game progress. Selenite is also powered by Google Adsense and a self hosted instance of Plausible Analytics.'; // Cookiepolicy link
 var purecookieButton = "Understood"; // Button text
 // ---        --- //
 
@@ -13,7 +13,7 @@ function pureFadeIn(elem, display){
 
   (function fade() {
     var val = parseFloat(el.style.opacity);
-    if (!((val += .02) > 1)) {
+    if (!((val += .04) > 1)) {
       el.style.opacity = val;
       requestAnimationFrame(fade);
     }
@@ -24,7 +24,7 @@ function pureFadeOut(elem){
   el.style.opacity = 1;
 
   (function fade() {
-    if ((el.style.opacity -= .02) < 0) {
+    if ((el.style.opacity -= .04) < 0) {
       el.style.display = "none";
     } else {
       requestAnimationFrame(fade);
@@ -57,7 +57,9 @@ function eraseCookie(name) {
 
 function cookieConsent() {
   if (!getCookie('purecookieDismiss')) {
-    document.body.innerHTML += '<div class="cookieConsentContainer" id="cookieConsentContainer"><div class="cookieTitle"><a>' + purecookieTitle + '</a></div><div class="cookieDesc"><p>' + purecookieDesc + ' ' + purecookieLink + '</p></div><div class="cookieButton"><a onClick="purecookieDismiss();">' + purecookieButton + '</a></div></div>';
+    let element = document.createElement("div");
+    element.innerHTML = '<div class="cookieConsentContainer" id="cookieConsentContainer"><div class="cookieTitle"><a>' + purecookieTitle + '</a></div><div class="cookieDesc"><p>' + purecookieDesc + ' ' + purecookieLink + '</p></div><div class="cookieButton"><a onClick="purecookieDismiss();">' + purecookieButton + '</a></div></div>';
+    document.body.appendChild(element);
 	pureFadeIn("cookieConsentContainer");
   }
 }
