@@ -575,6 +575,36 @@ p#counter {
 	right: 10px;
 	bottom: 10px;
 }
+
+div.profile.played {
+	margin: 40px;
+	width: 90%;
+	height: 70vh;
+	background-color: var(--uibg);
+	border-radius: 10px;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	box-shadow: 0px 0px 5px 5px var(--uibg);
+	justify-content: center;
+    flex-wrap: wrap;
+	
+}
+#played-games {
+	width: 100%;
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+}
+div.played-game {
+	width: 13%;
+	height: auto;
+	margin: 2%;
+	padding: 0;
+}
+div.played-game img {
+	aspect-ratio: 1 / 1;
+}
 @keyframes toastFade {
 	0% {
 		opacity: 0;
