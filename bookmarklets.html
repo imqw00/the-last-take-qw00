@@ -71,6 +71,11 @@
 					<p>Car Axle Client is a bookmarklet with tons of features, including a mini browser, YouTube embedder, and tons of other smaller scripts! (made by <a style="font-size: 16px" href="https://github.com/Penguinify">Penguinify</a>)</p>
 				</div>
 				<div class="bookmarkletdiv">
+					<a class="bookmarklet" href="javascript:(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='https://mrdoob.github.io/stats.js/build/stats.min.js';document.head.appendChild(script);})()">Stats.js</a>
+					<p>This allows you to view your FPS, RAM, and MS.</p>
+				</div>
+
+				<div class="bookmarkletdiv">
 					<a href='javascript:console.log(document.body.contentEditable="true"==document.body.contentEditable?"false":"true");' class="bookmarklet">Edit any page</a>
 					<p>This allows you to edit the text of any webpage.</p>
 				</div>

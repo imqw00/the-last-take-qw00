@@ -579,7 +579,8 @@ p#counter {
 div.profile.played {
 	margin: 40px;
 	width: 90%;
-	height: 70vh;
+	height: auto;
+	padding: 30px;
 	background-color: var(--uibg);
 	border-radius: 10px;
 	display: flex;
@@ -604,6 +605,7 @@ div.played-game {
 }
 div.played-game img {
 	aspect-ratio: 1 / 1;
+	border-radius: 20px;
 }
 @keyframes toastFade {
 	0% {

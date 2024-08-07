@@ -69,6 +69,10 @@
 		"name": "Calculator",
 		"image": "cover.svg",
 		"directory": "calc"
+	},
+	{
+		"name": "GodoBlocks", 
+		"directory": "godo",
+		"image": "cover.svg"
 	}
-
 ]
