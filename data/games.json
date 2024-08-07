@@ -125,11 +125,6 @@
 		"directory": "3flash"
 	},
 	{
-		"name": "Killgore",
-		"image": "cover.svg",
-		"directory": "kil"
-	},
-	{
 		"name": "GTA: Advance",
 		"image": "cover.svg",
 		"directory": "advgta"
@@ -265,11 +260,6 @@
 		"directory": "shapez"
 	},
 	{
-		"name": "Cars 2: The Video Game",
-		"image": "cover.svg",
-		"directory": "cars2"
-	},
-	{
 		"name": "Pickcrafter",
 		"image": "cover.svg",
 		"directory": "pick"
@@ -293,26 +283,6 @@
 		"name": "InfiniteCraft",
 		"image": "cover.svg",
 		"directory": "infi"
-	},
-	{
-		"name": "Brotato 1.9.0",
-		"image": "cover.svg",
-		"directory": "b2"
-	},
-	{
-		"name": "Brotato 2.0.0 BETA",
-		"image": "cover.svg",
-		"directory": "b2"
-	},
-	{
-		"name": "Bad Boys 2",
-		"image": "cover.svg",
-		"directory": "bad"
-	},
-	{
-		"name": "Pizza Delivery Parking",
-		"image": "cover.svg",
-		"directory": "piza"
 	},
 	{
 		"name": "Mine Blocks",
@@ -340,11 +310,6 @@
 		"directory": "pako"
 	},
 	{
-		"name": "Pixel Gun 3D",
-		"image": "cover.svg",
-		"directory": "pix"
-	},
-	{
 		"name": "Snowball.io",
 		"image": "cover.svg",
 		"directory": "snow"
@@ -353,11 +318,6 @@
 		"name": "Balloon Run",
 		"image": "cover.svg",
 		"directory": "bal"
-	},
-	{
-		"name": "Redball 2",
-		"image": "cover.svg",
-		"directory": "rb2"
 	},
 	{
 		"name": "Gunfest",
@@ -395,17 +355,7 @@
 		"directory": "doom-wasm"
 	},
 	{
-		"name": "Tom Loves Angela",
-		"image": "cover.svg",
-		"directory": "angelatom"
-	},
-	{
-		"name": "Talking Tom Cat 1",
-		"image": "cover.svg",
-		"directory": "tom1"
-	},
-	{
-		"name": "Talking Tom Cat 2",
+		"name": "Talking Tom Cat",
 		"image": "cover.svg",
 		"directory": "tom2"
 	},
@@ -445,16 +395,6 @@
 		"directory": "whe"
 	},
 	{
-		"name": "Sift Heads 1",
-		"image": "cover.svg",
-		"directory": "sift"
-	},
-	{
-		"name": "Good Guys vs Bad Guys",
-		"image": "cover.svg",
-		"directory": "good"
-	},
-	{
 		"name": "Glassworks",
 		"image": "cover.svg",
 		"directory": "glass"
@@ -485,11 +425,6 @@
 		"directory": "sky"
 	},
 	{
-		"name": "Super Stock Take",
-		"image": "cover.svg",
-		"directory": "super"
-	},
-	{
 		"name": "Plunger",
 		"image": "cover.svg",
 		"directory": "plu"
@@ -500,11 +435,6 @@
 		"directory": "brick"
 	},
 	{
-		"name": "Calamari",
-		"image": "cover.svg",
-		"directory": "cal"
-	},
-	{
 		"name": "Nitrome Must Die",
 		"image": "cover.svg",
 		"directory": "nitme"
@@ -513,11 +443,6 @@
 		"name": "Robo Run",
 		"image": "cover.svg",
 		"directory": "robo"
-	},
-	{
-		"name": "Smash Karts",
-		"image": "cover.svg",
-		"directory": "smash"
 	},
 	{
 		"name": "Meteor Game",
