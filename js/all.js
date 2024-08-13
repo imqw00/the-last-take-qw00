@@ -126,11 +126,10 @@ document.addEventListener(
 	() => {
 		setCloak();
 		let plausible = document.createElement("script");
+		plausible.setAttribute("event-domain", location.host)
 		plausible.setAttribute("defer", "");
 		plausible.setAttribute("src", "/js/analytics.js");
 		plausible.setAttribute("data-domain", "selenite.cc");
-		let plausible_more = document.createElement("script");
-		plausible_more.innerHTML = "window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }";
 		document.head.appendChild(plausible);
 	},
 	false

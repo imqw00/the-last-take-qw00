@@ -755,11 +755,6 @@
 		"directory": "spankthemonkey"
 	},
 	{
-		"name": "CMM Client",
-		"image": "cmm.jpeg",
-		"directory": "cmm-client"
-	},
-	{
 		"name": "Pool",
 		"image": "cover.svg",
 		"directory": "pool"

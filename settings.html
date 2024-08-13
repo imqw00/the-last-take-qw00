@@ -134,19 +134,6 @@
         <input type="text" id="panic" name="panic" placeholder="https://google.com" /><br />
         <input id="panic" class="submit" type="submit" value="Set Panic Mode" />
       </form>
-      <form action="javascript:setPassword();">
-        <h3 for="pass">Password to access website</h3>
-        <input type="text" id="pass" name="pass" placeholder="password" /><br />
-        <p>If a teacher tries to copy the URL from your browser, it will require a password to access the website.</p>
-        <p>If you type a wrong password, you will be locked out for 10 minutes, likewise, if you type the right password, it'll work for 10 minutes.</p>
-        <input id="setPass" class="submit" type="submit" value="Set Password" />
-        <button id="delPass" onclick="delPassword()">Delete Password</button>
-      </form>
-          <form>
-        <h3 for="adblock">Disable Advertisements</h3>
-        <p>If you disable advertisements, please donate to the <a href="https://www.patreon.com/selenitecc">Patreon</a> to support the website.</p>
-<button onclick="localStorage.setItem('selenite.adblock', 'true')">Click here to disable ads.</button>
-        </form>
     </main>
 <br>
     <footer>

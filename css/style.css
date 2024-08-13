@@ -607,6 +607,11 @@ div.played-game img {
 	aspect-ratio: 1 / 1;
 	border-radius: 20px;
 }
+.friend-icon {
+	width: 5%;
+	position: absolute;
+	left: 2%;
+}
 @keyframes toastFade {
 	0% {
 		opacity: 0;
