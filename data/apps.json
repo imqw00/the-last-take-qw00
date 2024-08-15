@@ -2,38 +2,38 @@
 	{
 		"name": "Ruffle", 
 		"directory": "ruffle",
-		"image": "cover.svg"
+		"image": "cover.png"
 	},
 	{
 		"name": "ZIP Unarchiver", 
 		"directory": "zip",
-		"image": "cover.svg"
+		"image": "cover.png"
 	},
 
 	{
 		"name": "GBA Emulator", 
 		"directory": "gba",
-		"image": "cover.svg"
+		"image": "cover.png"
 	},
 	{
 		"name": "EmulatorJS", 
 		"directory": "emu",
-		"image": "cover.svg"
+		"image": "cover.png"
 	},
 	{
 		"name": "Scratch 1", 
 		"directory": "scratch1",
-		"image": "cover.svg"
+		"image": "cover.png"
 	},
 	{
 		"name": "AyunWebEPK",
 		"directory": "ayun",
-		"image": "cover.svg"
+		"image": "cover.png"
 	},
 	{
 		"name": "Scratch 2",
 		"directory": "scratch2",
-		"image": "cover.svg"
+		"image": "cover.png"
 	},
 	{
 		"name": "SB2 to SWF",
@@ -43,12 +43,12 @@
 	{
 		"name": "MiniWiki",
 		"directory": "wiki",
-		"image": "cover.svg"
+		"image": "cover.png"
 	},
 	{
 		"name": "Windows 11",
 		"directory": "11",
-		"image": "cover.svg"
+		"image": "cover.png"
 	},
 	{
 		"name": "Javascript Deobfuscator",
@@ -73,6 +73,6 @@
 	{
 		"name": "GodoBlocks", 
 		"directory": "godo",
-		"image": "cover.svg"
+		"image": "cover.png"
 	}
 ]
