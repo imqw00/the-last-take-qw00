@@ -30,7 +30,7 @@
 						localesURI: "lang/",
 						worldsDB: "worlds",
 						servers: [
-							{ addr: "wss://" + location.host + "/mc", name: "§b§lEthereal",hideAddress:true},
+							{ addr: (location.protocol.includes("s") ? "wss": "ws") + "://" + location.host + "/mc", name: "§b§lEthereal",hideAddress:true},
 							{ addr: "wss://ethereal.mov", name: "§b§lEthereal§r§8§o (backup)",hideAddress:true}
 						],
 						relays: [
