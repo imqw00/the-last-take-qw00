@@ -119,6 +119,16 @@ body {
 .unsupported-text {
   display: none;
 }
+.new::before {
+  position: absolute;
+  left:0;
+  right: 0;
+  font-size: 12px;
+  text-wrap: nowrap;
+  bottom: -20px;
+  text-align: center;
+  content: "New discovery!";
+}
 
 @media (max-width: 512px) {
   body {
