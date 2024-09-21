@@ -57,40 +57,41 @@ async function mergeElements(element1, element2) {
 	const element2Type = stored_names[element2.id];
 
 	let data = await (await fetch(`/api/infinite/get?1=${encodeURIComponent(element1Type)}&2=${encodeURIComponent(element2Type)}`)).json();
-	console.log("done request");
-	if (stored_names.indexOf(data.item) == -1) {
-		console.log("not a thing");
-		if (localStorage.getItem("infiniteCraft.save")) {
-			let oldSave = JSON.parse(localStorage.getItem("infiniteCraft.save"));
-			oldSave.push(data);
-			localStorage.setItem("infiniteCraft.save", JSON.stringify(oldSave));
-		} else {
-			let oldSave = [];
-			oldSave.push(data);
-			localStorage.setItem("infiniteCraft.save", JSON.stringify(oldSave));
-		}
-		stored_names.push(data.item);
-		const newElementDiv = document.createElement("div");
-		newElementDiv.classList.add("element");
-		newElementDiv.id = stored_names.length - 1;
-		if (data.new) {
-			newElementDiv.classList.add("new");
-		}
-		newElementDiv.textContent = data.emoji + " " + data.item;
-		sidebar.appendChild(newElementDiv);
+	if (data.name !== "N/A" && data.emoji !== "N/A") {
+		if (stored_names.indexOf(data.item) == -1) {
+			console.log("not a thing");
+			if (localStorage.getItem("infiniteCraft.save")) {
+				let oldSave = JSON.parse(localStorage.getItem("infiniteCraft.save"));
+				oldSave.push(data);
+				localStorage.setItem("infiniteCraft.save", JSON.stringify(oldSave));
+			} else {
+				let oldSave = [];
+				oldSave.push(data);
+				localStorage.setItem("infiniteCraft.save", JSON.stringify(oldSave));
+			}
+			stored_names.push(data.item);
+			const newElementDiv = document.createElement("div");
+			newElementDiv.classList.add("element");
+			newElementDiv.id = stored_names.length - 1;
+			if (data.new) {
+				newElementDiv.classList.add("new");
+			}
+			newElementDiv.textContent = data.emoji + " " + data.item;
+			sidebar.appendChild(newElementDiv);
 
-		newElementDiv.addEventListener("mousedown", function (event) {
-			createDraggableClone(newElementDiv, event);
-		});
+			newElementDiv.addEventListener("mousedown", function (event) {
+				createDraggableClone(newElementDiv, event);
+			});
+		}
+		const mergedElement = document.createElement("div");
+		mergedElement.classList.add("element");
+		mergedElement.id = stored_names.indexOf(data.item);
+		if (data.new) {
+			mergedElement.classList.add("new");
+		}
+		mergedElement.textContent = data.emoji + " " + data.item;
+		return mergedElement;
 	}
-	const mergedElement = document.createElement("div");
-	mergedElement.classList.add("element");
-	mergedElement.id = stored_names.indexOf(data.item);
-	if (data.new) {
-		mergedElement.classList.add("new");
-	}
-	mergedElement.textContent = data.emoji + " " + data.item;
-	return mergedElement;
 
 	//
 	// old code
