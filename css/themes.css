@@ -41,10 +41,17 @@ body[theme=custom] {
     --textcolor: #fff;
     --bg: #10002b;
 }
+body[theme=mainnew] {
+    --inputbg: #3c096c;
+    --inputborder: #5a189a;
+    --uibg: #240046bb;
+    --textcolor: #fff;
+    --bg: linear-gradient(0deg, rgba(36,0,70,1) 0%, rgba(60,9,108,1) 50%, rgba(36,0,70,1) 100%);
+}
 body[theme=main] {
     --inputbg: #3c096c;
     --inputborder: #5a189a;
-    --uibg: #240046;
+    --uibg: #240046bb;
     --textcolor: #fff;
     --bg: #10002b;
 }
