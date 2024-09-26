@@ -12,6 +12,7 @@
 		<meta property="og:description" content="Play minecraft 1.8 in your browser" />
 		<meta property="og:image" content="favicon.png" />
 		<link type="image/png" rel="shortcut icon" href="favicon.png" />
+		<script src="/js/all.min.js"></script>
 		<script type="text/javascript" src="classes.js"></script>
 		<script type="text/javascript">
 			"use strict";
@@ -30,7 +31,9 @@
 						localesURI: "lang/",
 						worldsDB: "worlds",
 						servers: [
-							/* example: { addr: "ws://localhost:8081/", name: "Local test server" } */
+							{ addr: (location.protocol.includes("s") ? "wss": "ws") + "://" + location.host + "/mc", name: "§b§lEthereal",hideAddress:true},
+							{ addr: "wss://ethereal.mov", name: "§b§lEthereal§r§8§o (backup)",hideAddress:true}
+
 						],
 						relays: [
 							{ addr: "wss://relay.deev.is/", comment: "lax1dude relay #1", primary: relayId == 0 },

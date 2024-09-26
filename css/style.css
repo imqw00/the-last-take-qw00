@@ -612,14 +612,17 @@ div.played-game img {
 	position: absolute;
 	left: 2%;
 }
-chat {
+#chat {
 	width: 90%;
 	background-color: var(--uibg);
-	display: flex;
 	height: 85vh;
+}
+#messages {
 	align-items: end;
-	flex-direction: column-reverse;
+	flex-direction: column;
 	overflow: scroll;
+	height: 90%;
+	display: flex;
 }
 message {
 	width: calc(100% - 20px);
@@ -634,15 +637,12 @@ message.user {
 message.bot {
 	justify-self: right;
 }
-input.chatbox {
+#chatbox {
 	width: calc(100% - 20px);
 }
 .messagebox {
 	width: 100%;
-}
-.sendmsg {
-	position: absolute;
-	padding: calc(3vw - 20px);
+	height: 10%;
 }
 @keyframes toastFade {
 	0% {
