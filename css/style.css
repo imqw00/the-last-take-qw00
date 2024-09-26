@@ -612,6 +612,38 @@ div.played-game img {
 	position: absolute;
 	left: 2%;
 }
+chat {
+	width: 90%;
+	background-color: var(--uibg);
+	display: flex;
+	height: 85vh;
+	align-items: end;
+	flex-direction: column-reverse;
+	overflow: scroll;
+}
+message {
+	width: calc(100% - 20px);
+	padding: 20px;
+	margin: 10px;
+	background-color: var(--inputbg);
+	border-radius: 10px;
+}
+message.user {
+	background-color: var(--inputborder);
+}
+message.bot {
+	justify-self: right;
+}
+input.chatbox {
+	width: calc(100% - 20px);
+}
+.messagebox {
+	width: 100%;
+}
+.sendmsg {
+	position: absolute;
+	padding: calc(3vw - 20px);
+}
 @keyframes toastFade {
 	0% {
 		opacity: 0;

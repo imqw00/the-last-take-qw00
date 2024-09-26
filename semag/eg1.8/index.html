@@ -6,7 +6,6 @@
 		<meta name="description" content="Play minecraft 1.8 in your browser" />
 		<meta name="keywords" content="eaglercraft, eaglercraftx, minecraft, 1.8, 1.8.8" />
 		<title>EaglercraftX 1.8</title>
-		<script src="/js/all.min.js"></script>
 		<meta property="og:locale" content="en-US" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="EaglercraftX 1.8" />
@@ -31,8 +30,7 @@
 						localesURI: "lang/",
 						worldsDB: "worlds",
 						servers: [
-							{ addr: (location.protocol.includes("s") ? "wss": "ws") + "://" + location.host + "/mc", name: "§b§lEthereal",hideAddress:true},
-							{ addr: "wss://ethereal.mov", name: "§b§lEthereal§r§8§o (backup)",hideAddress:true}
+							/* example: { addr: "ws://localhost:8081/", name: "Local test server" } */
 						],
 						relays: [
 							{ addr: "wss://relay.deev.is/", comment: "lax1dude relay #1", primary: relayId == 0 },

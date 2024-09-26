@@ -2129,5 +2129,10 @@
 		"name": "Draw Climber",
 		"directory": "drawclimber",
 		"image": "assets/gameLogo.png"
+	},
+	{
+		"name": "Polytrack",
+		"directory": "polytrack",
+		"image": "cover.jpg"
 	}
 ]
