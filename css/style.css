@@ -615,12 +615,13 @@ div.played-game img {
 #chat {
 	width: 90%;
 	background-color: var(--uibg);
-	height: 85vh;
+	height: calc(100vh - (var(--margin) * 2) - 60px - 24px - 24px - 30px);
 }
 #messages {
 	align-items: end;
 	flex-direction: column;
-	overflow: scroll;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	height: 90%;
 	display: flex;
 }
@@ -630,6 +631,12 @@ message {
 	margin: 10px;
 	background-color: var(--inputbg);
 	border-radius: 10px;
+}
+message h1 {
+	font-size: 40px;
+}
+message h2 {
+	font-size: 32px;
 }
 message.user {
 	background-color: var(--inputborder);
