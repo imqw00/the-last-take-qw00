@@ -171,9 +171,6 @@ addEventListener("visibilitychange", (e) => {
 		}
 	}
 });
-$(document).ready(function () {
-	$.getScript("https://cdnjs.cloudflare.com/ajax/libs/core-js/3.37.0/minified.js");
-});
 var polyfillScript = document.createElement("script");
 polyfillScript.src = "https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0";
 document.head.appendChild(polyfillScript);

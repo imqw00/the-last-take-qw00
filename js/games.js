@@ -29,6 +29,7 @@ function loadGames(data) {
 				class: "game",
 				id: data[i].directory,
 				recommended: data[i].recommended,
+				// href: "loader.html#" + btoa(encodeURIComponent(JSON.stringify([data[i].directory, data[i].image, data[i].name]))),
 				href: "semag/" + data[i].directory + "/index.html",
 			})
 			.data("recommended", data[i].recommended)

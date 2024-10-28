@@ -1546,6 +1546,11 @@
 		"image": "amgojs]_.png"
 	},
 	{
+		"name": "Among Us (better)",
+		"directory": "amongusnew",
+		"image": "amgojs]_.png"
+	},
+	{
 		"name": "Bad Piggies",
 		"directory": "badpiggies",
 		"image": "badpiggies.png"
