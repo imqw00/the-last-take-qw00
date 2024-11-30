@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Capture the Flag",
+		"image": "cover.svg",
+		"directory": "tekpro"
+	},
+	{
 		"name": "Protektor",
 		"image": "cover.png",
 		"directory": "tekpro"
