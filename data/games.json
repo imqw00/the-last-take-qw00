@@ -1,8 +1,13 @@
 [
 	{
+		"name": "Shooting Range",
+		"image": "noFilter.webp",
+		"directory": "shootra"
+	},
+	{
 		"name": "Capture the Flag",
 		"image": "cover.svg",
-		"directory": "tekpro"
+		"directory": "cap"
 	},
 	{
 		"name": "Protektor",
