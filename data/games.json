@@ -1,5 +1,10 @@
 [
 	{
+		"name": "One Block",
+		"image": "noFilter.webp",
+		"directory": "one"
+	},
+	{
 		"name": "Bubble Battles",
 		"image": "noFilter.webp",
 		"directory": "battlebub"
