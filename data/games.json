@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Ragdoll Archer",
+		"image": "appicon_s.webp",
+		"directory": "ragarc"
+	},
+	{
 		"name": "Hello Run",
 		"image": "hello-run.webp",
 		"directory": "hello"
