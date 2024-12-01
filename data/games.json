@@ -1,5 +1,10 @@
 [
 	{
+		"name": "2D Obby",
+		"image": "noFilter.webp",
+		"directory": "obi2d"
+	},
+	{
 		"name": "Adopt Me",
 		"image": "noFilter.webp",
 		"directory": "adopt"
