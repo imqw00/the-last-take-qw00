@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Adopt Me",
+		"image": "noFilter.webp",
+		"directory": "adopt"
+	},
+	{
 		"name": "Flood Escape",
 		"image": "noFilter.webp",
 		"directory": "flood"
