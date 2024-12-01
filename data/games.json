@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Football Bros",
+		"image": "iuta4grw.bmp",
+		"directory": "brofoot"
+	},
+	{
 		"name": "One Block",
 		"image": "noFilter.webp",
 		"directory": "one"
