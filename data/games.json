@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Bubble Battles",
+		"image": "noFilter.webp",
+		"directory": "battlebub"
+	},
+	{
 		"name": "Brick Breaker",
 		"image": "noFilter.webp",
 		"directory": "brickbre"
