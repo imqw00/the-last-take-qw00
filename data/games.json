@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Phantom Forces",
+		"image": "noFilter.webp",
+		"directory": "phant"
+	},
+	{
 		"name": "Ragdoll Archer",
 		"image": "appicon_s.webp",
 		"directory": "ragarc"
