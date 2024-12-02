@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Natural Disaster Survival",
+		"image": "noFilter.webp",
+		"directory": "nat"
+	},
+	{
 		"name": "Phantom Forces",
 		"image": "noFilter.webp",
 		"directory": "phant"
