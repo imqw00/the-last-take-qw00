@@ -155,13 +155,6 @@ function timeAgo(input) {
 		}
 	}
 }
-let cookieConsentScript = document.createElement("script");
-cookieConsentScript.src = "/js/cookieConsent.js";
-document.head.appendChild(cookieConsentScript);
-let cookieConsentStyle = document.createElement("link");
-cookieConsentStyle.href = "/js/cookieConsent.css";
-cookieConsentStyle.rel = "stylesheet";
-document.head.appendChild(cookieConsentStyle);
 
 var $buoop = {required:{e:16,f:44,o:36,s:10,c:49},insecure:true,unsupported:true,api:2024.12 }; 
 function $buo_f(){ 
@@ -171,3 +164,12 @@ function $buo_f(){
 };
 try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
 catch(e){window.attachEvent("onload", $buo_f)}
+
+let cookieConsentScript = document.createElement("script");
+cookieConsentScript.src = "/js/cookieConsent.js";
+document.head.appendChild(cookieConsentScript);
+let cookieConsentStyle = document.createElement("link");
+cookieConsentStyle.href = "/js/cookieConsent.css";
+cookieConsentStyle.rel = "stylesheet";
+document.head.appendChild(cookieConsentStyle);
+
