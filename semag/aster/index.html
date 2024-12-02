@@ -1,0 +1,48 @@
+<style>
+        .full-wh {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+        }
+        
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+        
+        #stars {
+            width: 1px;
+            height: 1px;
+            background: transparent;
+</style>
+<div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
+    </div>
+<script>
+(function(){let img,asteroids=[],bullets=[],score=0,speed=0,maxSpeed=9,maxAcceleration=0.18,acceleration=0.18,deceleration=0.09,angle=0,turningSpeed=4.5,keys={w:false,s:false,a:false,d:false,space:false};let gameRunning=true;fetch('https://cdn.jsdelivr.net/gh/MRCodERDude/images@main/spaceshipimagedata.txt').then(response=>response.text()).then(data=>{img=document.createElement('img');img.src=data.trim();img.style.position='fixed';img.style.left='50%';img.style.top='50%';img.style.transform='translate(-50%,-50%) scale(0.9)';img.style.zIndex=9999;document.body.appendChild(img);const scoreDisplay=document.createElement('div');scoreDisplay.style.position='fixed';scoreDisplay.style.bottom='10px';scoreDisplay.style.left='10px';scoreDisplay.style.color='white';scoreDisplay.style.fontSize='24px';scoreDisplay.style.zIndex=10000;scoreDisplay.innerHTML='Score: 0';document.body.appendChild(scoreDisplay);function spawnAsteroid(){fetch('https://cdn.jsdelivr.net/gh/MRCodERDude/images@main/AstroidSpaceshipDATA.txt').then(response=>response.text()).then(data=>{const asteroid=document.createElement('img');asteroid.src=data.trim();asteroid.style.position='fixed';asteroid.style.zIndex=9998;const fromLeft=Math.random()<0.5;asteroid.style.left=(fromLeft?-50:window.innerWidth+50)+'px';asteroid.style.top=Math.random()*window.innerHeight+'px';asteroid.angle=0;asteroid.velocity=5*(fromLeft?1:-1);document.body.appendChild(asteroid);asteroids.push(asteroid);const moveAsteroid=setInterval(()=>{asteroid.style.left=parseFloat(asteroid.style.left)+asteroid.velocity+'px';asteroid.angle+=1;asteroid.style.transform='rotate('+asteroid.angle+'deg)';if(parseFloat(asteroid.style.left)<-100||parseFloat(asteroid.style.left)>window.innerWidth+100){clearInterval(moveAsteroid);document.body.removeChild(asteroid);asteroids=asteroids.filter(a=>a!==asteroid);}},50);});}function checkCollision(ship,asteroid){const shipRect=ship.getBoundingClientRect();const asteroidRect=asteroid.getBoundingClientRect();return!(shipRect.right<asteroidRect.left||shipRect.left>asteroidRect.right||shipRect.bottom<asteroidRect.top||shipRect.top>asteroidRect.bottom);}function checkBulletCollision(bullet,asteroid){const bulletRect=bullet.getBoundingClientRect();const asteroidRect=asteroid.getBoundingClientRect();return!(bulletRect.right<asteroidRect.left||bulletRect.left>asteroidRect.right||bulletRect.bottom<asteroidRect.top||bulletRect.top>asteroidRect.bottom);}setInterval(spawnAsteroid,5000+Math.random()*5000);function update(){if(!gameRunning)return;const rad=angle*Math.PI/180;if(keys.w){if(speed<maxSpeed){speed+=acceleration;}else{speed=maxSpeed;}}else if(keys.s){if(speed>0){speed-=deceleration;}}else{speed=Math.max(0,speed-deceleration);}img.style.left=parseFloat(img.style.left)+Math.cos(rad)*speed+'px';img.style.top=parseFloat(img.style.top)+Math.sin(rad)*speed+'px';if(parseFloat(img.style.left)<-50){img.style.left=window.innerWidth+'px';}else if(parseFloat(img.style.left)>window.innerWidth+50){img.style.left='0px';}if(parseFloat(img.style.top)<-50){img.style.top=window.innerHeight+'px';}else if(parseFloat(img.style.top)>window.innerHeight+50){img.style.top='0px';}img.style.transform='translate(-50%,-50%) rotate('+angle+'deg)';for(const asteroid of asteroids){if(checkCollision(img,asteroid)){const shipRect=img.getBoundingClientRect();const hitAngle=Math.atan2(shipRect.top-asteroid.getBoundingClientRect().top,shipRect.left-asteroid.getBoundingClientRect().left);asteroid.velocity=-Math.cos(hitAngle)*10;asteroid.angle+=180;asteroid.style.transform='rotate('+asteroid.angle+'deg)';}for(const bullet of bullets){if(checkBulletCollision(bullet,asteroid)){document.body.removeChild(bullet);bullets=bullets.filter(b=>b!==bullet);score+=10;scoreDisplay.innerHTML='Score: '+score;document.body.removeChild(asteroid);asteroids=asteroids.filter(a=>a!==asteroid);}}}requestAnimationFrame(update);}requestAnimationFrame(update);window.addEventListener('keydown',e=>{if(e.key==='Escape'){gameRunning=false;img.style.display='none';scoreDisplay.style.display='none';asteroids.forEach(asteroid=>{asteroid.style.display='none';});bullets.forEach(bullet=>{bullet.style.display='none';});console.log('Game stopped');}if(e.key==='a'){angle-=turningSpeed;}else if(e.key==='d'){angle+=turningSpeed;}else if(e.key==='w'){keys.w=true;}else if(e.key==='s'){keys.s=true;}else if(e.key===' '){keys.space=true;}});window.addEventListener('keyup',e=>{if(e.key==='a'){keys.a=false;}else if(e.key==='d'){keys.d=false;}else if(e.key==='w'){keys.w=false;}else if(e.key==='s'){keys.s=false;}else if(e.key===' '){keys.space=false;}});setInterval(()=>{if(keys.space){fetch('https://cdn.jsdelivr.net/gh/MRCodERDude/images@main/bulletimagedata.txt').then(response=>response.text()).then(data=>{const bullet=document.createElement('img');bullet.src=data.trim();bullet.style.position='fixed';bullet.style.zIndex=9997;bullet.style.left=parseFloat(img.style.left)+'px';bullet.style.top=parseFloat(img.style.top)+'px';bullet.angle=angle;bullet.style.transform='translate(-50%,-50%) scale(0.1) rotate('+bullet.angle+'deg)';document.body.appendChild(bullet);bullets.push(bullet);const bulletMove=setInterval(()=>{bullet.style.left=parseFloat(bullet.style.left)+Math.cos(bullet.angle*Math.PI/180)*15+'px';bullet.style.top=parseFloat(bullet.style.top)+Math.sin(bullet.angle*Math.PI/180)*15+'px';if(parseFloat(bullet.style.left)<-50||parseFloat(bullet.style.left)>window.innerWidth+50||parseFloat(bullet.style.top)<-50||parseFloat(bullet.style.top)>window.innerHeight+50){clearInterval(bulletMove);document.body.removeChild(bullet);bullets=bullets.filter(b=>b!==bullet);}},50);}).catch(err=>console.error('Error fetching bullet image:',err));}},100);}).catch(err=>console.error('Error fetching spaceship image:',err));})();
+</script>
+  <style> 
+    body {
+background-color:black;
+    background-image: url("https://4kwallpapers.com/images/wallpapers/stars-galaxy-1920x1080-10307.jpg");
+    }
+       
+<style>
+    
