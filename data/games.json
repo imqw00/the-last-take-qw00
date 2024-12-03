@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Buckshot Roulette",
+		"image": "IMG_2880.jpeg",
+		"directory": "buckrou"
+	}
+	{
 		"name": "Asteroids",
 		"image": "IMG_2879.jpeg",
 		"directory": "aster"
