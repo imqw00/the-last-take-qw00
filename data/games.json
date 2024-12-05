@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Undertale",
+		"image": "favicon.png",
+		"directory": "und"
+	}
+	{
 		"name": "Buckshot Roulette",
 		"image": "IMG_2880.jpeg",
 		"directory": "buckrou"
