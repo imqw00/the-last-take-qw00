@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Vampire Survivors",
+		"image": "favicon.ico",
+		"directory": "vasu"
+	}
+	{
 		"name": "Undertale",
 		"image": "favicon.png",
 		"directory": "und"
