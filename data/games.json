@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Rocketpult",
+		"image": "index.gif",
+		"directory": "pulroc"
+	}
+	{
 		"name": "Vampire Survivors",
 		"image": "favicon.ico",
 		"directory": "vasu"
