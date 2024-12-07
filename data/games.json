@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Snip And Style",
+		"image": "snip.png",
+		"directory": "snip"
+	}
+	{
 		"name": "Rocketpult",
 		"image": "index.gif",
 		"directory": "pulroc"
