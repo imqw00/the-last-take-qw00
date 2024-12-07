@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Angry Birds",
+		"image": "AngryBirdsFavIcon_512x512.png",
+		"directory": "angbi"
+	}
+	{
 		"name": "Snip And Style",
 		"image": "snip.png",
 		"directory": "snip"
