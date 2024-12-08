@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Sonic 3D",
+		"image": "EndlessRunnerFavIcon_512x512.png",
+		"directory": "3dson"
+	}
+	{
 		"name": "Angry Birds",
 		"image": "AngryBirdsFavIcon_512x512.png",
 		"directory": "angbi"
