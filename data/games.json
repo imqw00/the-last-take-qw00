@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Moto Racer",
+		"image": "MotoRacerFavIcon_512x512.png",
+		"directory": "Moracer"
+	}
+	{
 		"name": "Sonic 3D",
 		"image": "EndlessRunnerFavIcon_512x512.png",
 		"directory": "3dson"
