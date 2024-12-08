@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Wine", 
+		"directory": "wine",
+		"image": "WinAppRunnerFavIcon_512x512.png"
+	},
+	{
 		"name": "MacOS 7", 
 		"directory": "macos",
 		"image": "MinivMacFavIcon_512x512.png"
