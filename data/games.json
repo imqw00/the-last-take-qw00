@@ -65,11 +65,6 @@
 		"directory": "3sonic"
 	},
 	{
-		"name": "Minecraft Tower Defense 1",
-		"image": "cover.png",
-		"directory": "1defense"
-	},
-	{
 		"name": "Hobo 7",
 		"image": "cover.png",
 		"directory": "7hobo"
@@ -593,11 +588,6 @@
 		"name": "Driving Force 4",
 		"image": "cover.png",
 		"directory": "driving"
-	},
-	{
-		"name": "Minecraft Games",
-		"image": "cover.png",
-		"directory": "eaglercraft"
 	},
 	{
 		"name": "Red Ball 1",
