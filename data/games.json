@@ -1,5 +1,10 @@
 [
 	{
+		"name": "Minecraft Games",
+		"image": "image.png",
+		"directory": "eaglercraft"
+	},
+	{
 		"name": "Protektor",
 		"image": "cover.png",
 		"directory": "tekpro"
