@@ -1,128 +1,8 @@
 [
 	{
-		"name": "Moto Racer",
-		"image": "MotoRacerFavIcon_512x512.png",
-		"directory": "Moracer"
-	}
-	{
-		"name": "Sonic 3D",
-		"image": "EndlessRunnerFavIcon_512x512.png",
-		"directory": "3dson"
-	}
-	{
-		"name": "Angry Birds",
-		"image": "AngryBirdsFavIcon_512x512.png",
-		"directory": "angbi"
-	}
-	{
-		"name": "Snip And Style",
-		"image": "snip.png",
-		"directory": "snip"
-	}
-	{
-		"name": "Rocketpult",
-		"image": "index.gif",
-		"directory": "pulroc"
-	}
-	{
-		"name": "Vampire Survivors",
-		"image": "favicon.ico",
-		"directory": "vasu"
-	}
-	{
-		"name": "Undertale",
-		"image": "favicon.png",
-		"directory": "und"
-	}
-	{
-		"name": "Buckshot Roulette",
-		"image": "IMG_2880.jpeg",
-		"directory": "buckrou"
-	}
-	{
-		"name": "Asteroids",
-		"image": "IMG_2879.jpeg",
-		"directory": "aster"
-	}
-	{
-		"name": "Blade Ball",
-		"image": "300.webp",
-		"directory": "balblade"
-	},
-	{
-		"name": "Natural Disaster Survival",
-		"image": "noFilter.webp",
-		"directory": "nat"
-	},
-	{
-		"name": "Phantom Forces",
-		"image": "noFilter.webp",
-		"directory": "phant"
-	},
-	{
-		"name": "Ragdoll Archer",
-		"image": "appicon_s.webp",
-		"directory": "ragarc"
-	},
-	{
-		"name": "Hello Run",
-		"image": "hello-run.webp",
-		"directory": "hello"
-	},
-	{
-		"name": "Football Bros",
-		"image": "iuta4grw.bmp",
-		"directory": "brofoot"
-	},
-	{
-		"name": "One Block",
-		"image": "noFilter.webp",
-		"directory": "one"
-	},
-	{
-		"name": "Bubble Battles",
-		"image": "noFilter.webp",
-		"directory": "battlebub"
-	},
-	{
-		"name": "Brick Breaker",
-		"image": "noFilter.webp",
-		"directory": "brickbre"
-	},
-	{
-		"name": "Tower",
-		"image": "noFilter.webp",
-		"directory": "tower"
-	},
-	{
-		"name": "2D Obby",
-		"image": "noFilter.webp",
-		"directory": "obi2d"
-	},
-	{
-		"name": "Adopt Me",
-		"image": "noFilter.webp",
-		"directory": "adopt"
-	},
-	{
-		"name": "Flood Escape",
-		"image": "noFilter.webp",
-		"directory": "flood"
-	},
-	{
-		"name": "Mutant Ant",
-		"image": "noFilter.webp",
-		"directory": "mutantant"
-	},
-	{
-		"name": "Shooting Range",
-		"image": "noFilter.webp",
-		"directory": "shootra"
-	},
-	{
-		"name": "Capture the Flag",
-		"image": "cover.svg",
-		"directory": "cap"
+		"name": "Minecraft Games",
+		"image": "image.png",
+		"directory": "eaglercraft"
 	},
 	{
 		"name": "Protektor",
@@ -188,11 +68,6 @@
 		"name": "Sonic 3",
 		"image": "cover.png",
 		"directory": "3sonic"
-	},
-	{
-		"name": "Minecraft Tower Defense 1",
-		"image": "cover.png",
-		"directory": "1defense"
 	},
 	{
 		"name": "Hobo 7",
@@ -718,11 +593,6 @@
 		"name": "Driving Force 4",
 		"image": "cover.png",
 		"directory": "driving"
-	},
-	{
-		"name": "Minecraft Games",
-		"image": "cover.png",
-		"directory": "eaglercraft"
 	},
 	{
 		"name": "Red Ball 1",
