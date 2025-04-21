@@ -1,0 +1,35 @@
+<!doctypehtml>
+<html lang=en>
+<meta charset=UTF-8>
+<meta content="width=device-width,initial-scale=1" name=viewport>
+<title>Capture the Flag | Selenite</title>
+<script src=https://lib.baomitu.com/jquery/1.9.1/jquery.js></script>
+<link href=https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css rel=stylesheet>
+<link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css rel=stylesheet>
+<style>
+    #game-container{width:800px;height:500px;margin:0 auto;overflow:hidden;position:relative;border:2px solid #000;background-color:#a0aec0}#map{width:2000px;height:1500px;position:absolute;background-color:#e2e8f0}.player{width:50px;height:50px;position:absolute;background-color:#ef4444;border-radius:5px}.obstacle{width:100px;height:100px;position:absolute;background-color:#2d3748}
+</style>
+<div class="container my-4 text-center">
+    <h1 class="font-bold text-2xl">Capture the Flag</h1>
+    <p class=text-gray-600>Use arrow keys or WASD to move the player.
+        <div id=google_translate_element></div>
+        <script>
+            function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"en",layout:google.translate.TranslateElement.InlineLayout.SIMPLE},"google_translate_element")}
+        </script>
+        <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script>
+            atOptions={key:"219a9727b101d5450d07fc0ab2e40039",format:"iframe",height:60,width:468,params:{}}
+        </script>
+        <script src=//plantationexhaust.com/219a9727b101d5450d07fc0ab2e40039/invoke.js></script>
+        <div id=game-container>
+            <div id=map>
+                <div class=player style=top:725px;left:975px id=player></div>
+                <div class=obstacle style=top:400px;left:400px></div>
+                <div class=obstacle style=top:800px;left:1200px></div>
+                <div class=obstacle style=top:1000px;left:600px></div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() { const player = $('#player'); const map = $('#map'); const container = $('#game-container'); const speed = 10; let playerPosition = { top: 725, left: 975 }; // Handle player movement $(document).on('keydown', function(event) { const key = event.key.toLowerCase(); // Normalize key input to lowercase // Update player position based on input switch (key) { case 'arrowup': // Up arrow key case 'w':       // W key playerPosition.top -= speed; break; case 'arrowdown': // Down arrow key case 's':         // S key playerPosition.top += speed; break; case 'arrowleft': // Left arrow key case 'a':         // A key playerPosition.left -= speed; break; case 'arrowright': // Right arrow key case 'd':          // D key playerPosition.left += speed; break; } // Constrain the player within the map bounds playerPosition.top = Math.max(0, Math.min(playerPosition.top, map.height() - player.height())); playerPosition.left = Math.max(0, Math.min(playerPosition.left, map.width() - player.width())); // Move the player player.css('top', playerPosition.top + 'px'); player.css('left', playerPosition.left + 'px'); // Center the map around the player const containerOffset = { top: Math.min(0, Math.max(container.height() / 2 - playerPosition.top, container.height() - map.height())), left: Math.min(0, Math.max(container.width() / 2 - playerPosition.left, container.width() - map.width())) }; map.css('top', containerOffset.top + 'px'); map.css('left', containerOffset.left + 'px'); }); });
+        </script>
+</div>

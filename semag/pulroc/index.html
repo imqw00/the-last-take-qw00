@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>ROCKETPULT</title>
+
+	<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-icon" sizes="256x256" href="icon-256.png" />
+	<meta name="HandheldFriendly" content="true" />
+	<link rel="manifest" href="appmanifest.json" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css"
+		integrity="sha512-DD6Lm09YDHzhW3K4eLJ9Y7sFrBwtCF+KuSWOLYFqKsZ6RX4ifCu9vWqM4R+Uy++aBWe6wD4csgQRzGKp5vP6tg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="icon" type="image/png" href="icons/icon-512.png" />
+	<link rel="stylesheet" href="style.css" />
+
+	<!-- Chrome for Android web app tags -->
+	<meta name="mobile-web-app-capable" content="yes" />
+	<link rel="shortcut icon" sizes="256x256" href="icon-256.png" />
+
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		html,
+		body {
+			height: 100%;
+			width: 100%;
+			background: #000;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+			touch-action: none;
+		}
+
+		#c2canvasdiv {
+			width: 100%;
+			height: 100%;
+	display: flex;
+				justify-content: center;
+			align-items: center;
+		}
+
+		canvas {
+			width: 100%;
+				display: flex;
+			height: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="fb-root"></div>
+<center>
+	<div id="c2canvasdiv">
+		<canvas id="c2canvas">
+			<h1>Your browser does not appear to support HTML5...</h1>
+		</canvas>
+	</div>
+</center>
+	<script src="https://lib.baomitu.com/jquery/1.9.1/jquery.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/core-js-bundle@3.39.0/minified.min.js"></script>
+	<script src="c2runtime.js"></script>
+	<script src="register-sw.js"></script>
+	<script src="opusDecoder.js"></script>
+<script>
+// firefox is too buggy for our game
+	function isFirefox() {
+		return /Firefox/i.test(navigator.userAgent);
+	}
+
+	function showPopup() {
+		var $popup = $('<div>', {
+			id: 'popup'
+		}).css({
+			position: 'fixed',
+			top: '0',
+			left: '0',
+			width: '100%',
+			height: '100%',
+			backgroundColor: 'rgba(0, 0, 0, 0.5)',
+			display: 'flex',
+			justifyContent: 'center',
+			alignItems: 'center',
+			zIndex: '9999'
+		});
+
+		var $popupContent = $('<div>').css({
+			backgroundColor: 'black',
+			color: 'white',
+			padding: '20px',
+			borderRadius: '8px',
+			boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+			maxWidth: '400px',
+			width: '80%',
+			textAlign: 'center'
+		});
+
+		$popupContent.append('<h2>Welcome, Firefox User!</h2>');
+		$popupContent.append('<p>Unfortunately, Firefox is unsupported, so we suggest you use the Google Chrome browser instead.</p>');
+
+		var $closeButton = $('<button>', {
+			text: 'Download Chrome'
+		}).css({
+			backgroundColor: 'green',
+			color: 'white',
+			padding: '10px 15px',
+			border: 'none',
+			borderRadius: '4px',
+			cursor: 'pointer'
+		});
+		$closeButton.append('<i class="fa fa-chrome" aria-hidden="true"></i>');
+
+		$popupContent.append($closeButton);
+
+		$popup.append($popupContent);
+
+		$('body').append($popup);
+
+		$closeButton.on('click', function () {
+			$('html').remove();
+			window.location.href = "https://www.google.com/chrome/";
+		});
+	}
+
+	if (isFirefox()) {
+		showPopup();
+	}
+
+
+</script>
+	<script>
+		window.onload = function () {
+			resizeCanvas();
+			cr_createRuntime("c2canvas");
+		};
+
+		window.addEventListener('resize', resizeCanvas);
+
+		function resizeCanvas() {
+			var canvas = document.getElementById('c2canvas');
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+		}
+
+		function onVisibilityChanged() {
+			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
+				cr_setSuspended(true);
+			else
+				cr_setSuspended(false);
+		}
+
+		document.addEventListener("visibilitychange", onVisibilityChanged, false);
+		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
+
+
+	</script>
+</body>
+
+</html>
