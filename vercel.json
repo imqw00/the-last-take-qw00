@@ -1,7 +1,5 @@
 {
-  "cleanUrls": true
-}
-{
+  "cleanUrls": true,
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
     { "source": "/bookmarklets", "destination": "/bookmarklets.html" },
