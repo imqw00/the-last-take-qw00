@@ -1,3 +1,16 @@
 {
   "cleanUrls": true
 }
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/bookmarklets", "destination": "/bookmarklets.html" },
+    { "source": "/projects", "destination": "/projects.html" },
+    { "source": "/apps", "destination": "/apps.html" },
+    { "source": "/settings", "destination": "/settings.html" },
+    { "source": "/support", "destination": "/support.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/suggest", "destination": "/suggest.html" }
+  ]
+}
